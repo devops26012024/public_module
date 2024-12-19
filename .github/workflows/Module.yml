@@ -20,6 +20,9 @@ jobs:
           terraform_version: 1.5.0
 
       - name: Validate Terraform Module
+        run: terraform init          
+
+      - name: Validate Terraform Module
         run: terraform validate
 
       - name: Format Terraform Files
