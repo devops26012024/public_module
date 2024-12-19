@@ -1,0 +1,30 @@
+name: Publish Terraform Module
+
+on:
+  push:
+    tags:
+      - 'v1.0.0' # Trigger on version tags like v1.0.0
+
+jobs:
+  publish:
+    name: Publish Terraform Module
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Terraform CLI
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0
+
+      - name: Validate Terraform Module
+        run: terraform validate
+
+      - name: Format Terraform Files
+        run: terraform fmt -check
+
+      - name: Publish Module
+        run: |
+          echo "Module version $(git describe --tags) published."
