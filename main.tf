@@ -1,5 +1,5 @@
 module "vpc" {
-  source             = "git::github.com/devops26012024/private_module.git/vpcmodule?//"
+  source             = "git::github.com/devops26012024/private_module.git/vpcmodule//?=v1.0.0"
   name               = "example"
   vpc_cidr           = "10.0.0.0/16"
   availability_zones = ["ap-south-1a", "ap-south-1b"]
