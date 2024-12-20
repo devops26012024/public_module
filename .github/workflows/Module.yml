@@ -1,8 +1,9 @@
 name: Publish Terraform Module 
   
-on: 
+on:
   push:
-
+    tags:
+      - 'v*.*.*'
 jobs:
   publish:
     name: Publish Terraform Module
