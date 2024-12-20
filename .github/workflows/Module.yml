@@ -2,8 +2,6 @@ name: Publish Terraform Module
   
 on: 
   push:
-    tags: 
-      - 'v1.0.0' # Trigger on version tags like v1.0.0 
 
 jobs:
   publish:
